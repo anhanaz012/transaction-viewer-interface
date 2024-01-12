@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="index.js"></script>
-    <title>Document</title>
+    <title>User Tansactions</title>
   </head>
   <body>
     <div class="layoutContainer">
@@ -63,39 +63,64 @@
           ></i>
         </div>
         <div class="profileIntroContainer">
-          <div class="profileContainer">
-            <img src="./assets/images/Profile.jpg" class="profile" />
-          </div>
-          <div class="greetContainer">
-            <h2 class="Name">Hi Mike,</h2>
-            <p class="greet">welcome back</p>
+          <div class="profileContent">
+            <div class="profileContainer">
+              <img src="./assets/images/Profile.jpg" class="profile" />
+            </div>
+            <div class="greetContainer">
+              <h2 class="Name">Hi Mike,</h2>
+              <p class="greet">welcome back</p>
+            </div>
           </div>
         </div>
 
         <div class="todayTransactionsContainer">
           <div class="contentContainer">
-            <h4 class="day">Today</h4>
-            <h2 class="todayAmount">$19,892</h2>
-            <p class="todayBalance">Account Balance</p>
+            <div class="todayTransactions">
+              <h4 class="day">Today</h4>
+              <h2 class="todayAmount">$19,892</h2>
+              <p class="todayBalance">Account Balance</p>
+            </div>
             <div class="yearlyTransitions">
               <div class="amountContainer">
                 <h4 class="boldText">$4,000</h4>
-                <p class="todayBalance">Year-to-Date</p>
+                <div style="display: flex; flex-direction: row">
+                  <p class="todayBalance">Year-to-Date</p>
+                  <p class="contributions">Contributions</p>
+                </div>
               </div>
               <div class="amountContainer">
                 <h4 class="boldText">$1,892</h4>
-                <p class="todayBalance">Total Interest</p>
+                <div>
+                  <p class="todayBalance">Total Interest</p>
+                </div>
               </div>
             </div>
             <button class="Dropdown">
-              <p>I want to</p>
+              <p class="btnText">I want to...</p>
               <p class="caretIcon">
                 <i class="fas fa-caret-down"></i>
               </p>
             </button>
           </div>
         </div>
-        <div class="recentTransactions"></div>
+        <div class="recentTransactionsContainer">
+          <div class="transactionsContainer">
+            <h4 class="day">Recent Transactions</h4>
+            <div class="withdrawalContainer">
+              <p class="date">2020-08-07</p>
+              <h5 class="withdrawal">Withdrawal Transfer to Bank XXX11</h5>
+            </div>
+            <div class="withdrawalContainer">
+              <p class="date">2020-08-07</p>
+              <h5 class="withdrawal">Withdrawal Transfer to Bank XXX11</h5>
+            </div>
+            <div class="withdrawalContainer">
+              <p class="date">2020-08-07</p>
+              <h5 class="withdrawal">Withdrawal Transfer to Bank XXX11</h5>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="middleSubContainer"></div>
       <div class="lastSubContainer"></div>
