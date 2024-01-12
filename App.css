@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .layoutContainer {
   height: 100svh;
   width: 100%;
@@ -18,13 +17,21 @@ body {
   height: 100%;
   width: 45%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .lastSubContainer {
   height: 100%;
   width: 26%;
   background-color: #eaeaec;
 }
-
+#custom-stacked-chart {
+  max-width: 95%;
+  height: 90%;
+  border-radius: 8px;
+}
 .Name {
   position: absolute;
 }
@@ -276,9 +283,297 @@ body {
   display: flex;
   flex-direction: column;
 }
+.retirementIncomeContainer {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+}
+.retirmentContentContainer {
+  width: 80%;
+  height: 100%;
+  margin: 0;
+}
+.incomeYear {
+  margin: 0;
+  font-size: 20px;
+  color: black;
+}
+.retirementIncomeHeading {
+  margin: 0;
+  font-size: 12px;
+  color: blue;
+}
+.goalEstimation {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.amount {
+  margin: 0;
+}
+.myGoalContainer {
+  width: 30%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-bottom: 1px solid blue;
+}
+.goalAchievedContainer {
+  width: 30%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-bottom: 1px solid blue;
+}
+.estimateIncomeContainer {
+  width: 30%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-bottom: 1px solid blue;
+}
+.myGoal {
+  font-size: 12px;
+  color: grey;
+  margin: 0;
+}
+.chartContainer {
+  height: 40%;
+  width: 100%;
+  /* background-color: yellow; */
+}
+.goalDescription {
+  font-size: 12px;
+  color: grey;
+  margin: 0;
+}
+.comparisonContainer {
+  height: 25%;
+  width: 100%;
+}
+.progressContainer {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
+.averageProgressContainer {
+  height: 100%;
+  width: 30%;
+  background-color: #eaeaec;
+}
+.topProgressContainer {
+  height: 100%;
+  width: 30%;
+  background-color: chocolate;
+}
+.meProgressContainer {
+  height: 100%;
+  width: 30%;
+  background-color: red;
+}
+.infoLabel {
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.selectorContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+}
+.circularProgressContainer {
+  width: 65%;
+  height: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.ageSelector {
+  font-size: 12px;
+}
+.personalInfoContainer {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contributionsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0px;
+  margin-top: -15px;
+  justify-content: space-between;
+}
+.employerAmountContainer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.employerColorDisplay {
+  height: 7px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: #0001a2;
+}
+.employeeAmountContainer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contributionText {
+  font-size: 12px;
+  color: grey;
+}
+.employeeColorDisplay {
+  height: 7px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: #493afd;
+}
+.totalInterestDisplay {
+  height: 7px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: #73b0ff;
+}
+.totalInterestContainer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.ageSelector {
+  width: 80%;
+  background-color: transparent;
+  border: none;
+}
+.mobileIncome {
+  display: none;
+}
+.ContributionAmount {
+  font-size: 12px;
+  color: black;
+  margin: 0;
+}
 /* MEDIA QUERY FOR MOBILES */
 @media (max-width: 480px) {
+  .contributionsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+  .employerAmountContainer {
+    width: 30%;
+    display: flex;
+    align-items: flex-start;
+    height: 65px;
+    flex-direction: column;
+  }
+  .chartContainer {
+    height: 250px;
+    width: 100%;
+    background-color: white;
+  }
+  .employeeAmountContainer {
+    width: 30%;
+    display: flex;
+    align-items: flex-start;
+    height: 65px;
+    flex-direction: column;
+  }
+  .totalInterestContainer {
+    width: 30%;
+    display: flex;
+    align-items: flex-start;
+    height: 65px;
+    flex-direction: column;
+  }
+  .goalAchievedContainer {
+    display: none;
+  }
+  .estimateIncomeContainer {
+    display: none;
+  }
+  .goalEstimation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileIncome {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: space-between;
+  }
+  .mobileEstimateIncome {
+    width: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-bottom: 1px solid blue;
+  }
+  .mobileGoalAchieved {
+    width: 45%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-bottom: 1px solid blue;
+  }
+  .retirmentContentContainer {
+    margin-top: 10px;
+  }
+  .retirementIncomeContainer {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  .myGoalContainer {
+    height: 55px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .incomeYear {
+    margin: 0;
+  }
   .profile {
     height: 65px;
     width: 65px;
@@ -307,7 +602,8 @@ body {
   }
   .layoutContainer {
     flex-direction: column;
-    height: auto;
+    height: fit-content;
+    background-color: #4435fd;
   }
   .firstSubContainer {
     width: 100%;
@@ -317,6 +613,7 @@ body {
   .middleSubContainer {
     width: 100%;
     height: auto;
+    background-color: white;
   }
   .lastSubContainer {
     width: 100%;
@@ -430,6 +727,19 @@ body {
     margin-top: 20px;
     padding-left: 20px;
     border-radius: 15px;
+  }
+
+  .employerColorDisplay {
+    height: 7px;
+    width: 10px;
+  }
+  .employeeColorDisplay {
+    height: 7px;
+    width: 10px;
+  }
+  .totalInterestDisplay {
+    height: 7px;
+    width: 10px;
   }
 }
 
@@ -596,6 +906,61 @@ body {
 
 /* MEDIA QUERY FOR TABLET  */
 @media (min-width: 768px) and (max-width: 991px) {
+  
+  .employerColorDisplay {
+    height: 5px;
+    width: 7px;
+  }
+  .employeeColorDisplay {
+    height: 5px;
+    width: 7px;
+  }
+  .totalInterestDisplay {
+    height: 5px;
+    width: 7px;
+  }
+  .ContributionAmount {
+    font-size: 8px;
+    color: black;
+    margin: 0;
+  }
+  .myGoalContainer {
+    justify-content: center;
+    height: 70%;
+  }
+  .goalAchievedContainer {
+    justify-content: center;
+    height: 70%;
+  }
+  .estimateIncomeContainer {
+    justify-content: center;
+    height: 70%;
+  }
+  .amount {
+    font-size: 12px;
+  }
+  .myGoal {
+    font-size: 8px;
+  }
+  .contributionsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px;
+    margin-top: -15px;
+    justify-content: space-between;
+  }
+  .employerAmountContainer {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+  }
+  .contributionText {
+    font-size: 6px;
+  }
+  .totalInterestContainer {
+    width: 35%;
+  }
   .navbar {
     width: 6%;
   }
@@ -603,7 +968,7 @@ body {
     width: 30%;
   }
   .profileIntroContainer {
-    height: 25%;
+    height: 20%;
   }
   .logo {
     height: 20px;
@@ -629,8 +994,8 @@ body {
     width: 55%;
   }
   .profile {
-    height: 55px;
-    width: 55px;
+    height: 45px;
+    width: 45px;
     border-radius: 25px;
   }
   .Name {
@@ -651,33 +1016,47 @@ body {
   }
   .todayBalance {
     margin-top: -15px;
-    font-size: 12px;
+    font-size: 10px;
     color: grey;
   }
   .Dropdown {
-    width: 70%;
+    width: 65%;
   }
   .todayAmount {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: -5px;
   }
   .day {
-    font-size: small;
+    font-size: 10px;
     margin-top: -10px;
   }
   .contributions {
     display: none;
   }
-  .withdrawalContainer{
+  .withdrawalContainer {
     width: 100%;
   }
-  .date{
-
+  .date {
+    font-size: 9px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .withdrawal {
+    font-size: 8px;
+    margin-top: -11px;
+  }
+  .Dropdown {
+    height: 30px;
+    border-radius: 5px;
+  }
+  .day {
     font-size: 10px;
   }
-  .withdrawal{
-    font-size: 8px;
-    margin-top: -12px;
+  .boldText {
+    font-size: 12px;
+  }
+  .incomeYear {
+    font-size: 16px;
   }
 }
 
@@ -698,4 +1077,131 @@ body {
   .contentContainer {
     width: 80%;
   }
+}
+
+/* MEDIA QUERY FOR LARGE TABLETS/LAPTOPS   */
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  .withdrawalContainer {
+    width: 100%;
+  }
+  .profileIntroContainer {
+    height: 20%;
+  }
+  .logo {
+    height: 20px;
+    width: 20px;
+    margin-top: 35px;
+  }
+  .navIcon {
+    font-size: 14px;
+  }
+  .desktopSearch {
+    font-size: 12px;
+  }
+  .desktopNotification {
+    justify-content: flex-start;
+  }
+  .exitIcon {
+    justify-content: flex-start;
+  }
+  .profileContainer {
+    width: auto;
+  }
+  .greetContainer {
+    width: 55%;
+  }
+  .profile {
+    height: 45px;
+    width: 45px;
+    border-radius: 25px;
+  }
+  .Name {
+    font-size: 18px;
+    position: absolute;
+  }
+  .greet {
+    margin-top: 40px;
+    font-size: 12px;
+  }
+  .todayAmount {
+    margin-top: -15%;
+  }
+  .todayContributions {
+    margin-top: -15px;
+    font-size: 12px;
+    color: grey;
+  }
+  .todayBalance {
+    margin-top: -15px;
+    font-size: 10px;
+    color: grey;
+  }
+  .Dropdown {
+    width: 65%;
+  }
+  .todayAmount {
+    font-size: 16px;
+    margin-top: -5px;
+  }
+  .day {
+    font-size: 10px;
+    margin-top: -10px;
+  }
+  .contributions {
+    display: none;
+  }
+  .withdrawalContainer {
+    width: 100%;
+  }
+  .date {
+    font-size: 9px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .withdrawal {
+    font-size: 8px;
+    margin-top: -11px;
+  }
+  .Dropdown {
+    height: 30px;
+    border-radius: 5px;
+  }
+  .day {
+    font-size: 10px;
+  }
+  .boldText {
+    font-size: 12px;
+  }
+  .myGoalContainer {
+    justify-content: center;
+    height: 80%;
+  }
+  .goalAchievedContainer {
+    justify-content: center;
+    height: 80%;
+  }
+  .estimateIncomeContainer {
+    justify-content: center;
+    height: 80%;
+  }
+  .amount {
+    font-size: 16px;
+  }
+  .myGoal {
+    font-size: 12px;
+  }
+
+ .totalInterestContainer{
+    width: 40%;
+ }
+ .ContributionAmount {
+  font-size: 10px;
+  color: black;
+  margin: 0;
+}
+.contributionText{
+  font-size: 10px;
+}
+ 
 }
