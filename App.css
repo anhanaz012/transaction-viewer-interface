@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Merriweather", serif;
 }
 .layoutContainer {
   height: 100svh;
@@ -25,7 +26,7 @@ body {
 .lastSubContainer {
   height: 100%;
   width: 26%;
-  background-color: #eaeaec;
+  background-color: white;
 }
 #custom-stacked-chart {
   max-width: 95%;
@@ -46,6 +47,48 @@ body {
   flex-direction: column;
   align-items: flex-start;
   width: 70%;
+}
+.retirementStrategyContainer {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.stonesContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: end;
+}
+.firstStone {
+  height: 45px;
+  width: 50px;
+  background-color: #73b0ff;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 55px;
+  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+}
+.secondStone {
+  height: 25px;
+  width: 120px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 10px;
+  background-color: #0001a2;
+  position: absolute;
+}
+.comparisonHeading {
+  margin: 0;
 }
 .profile {
   height: 60px;
@@ -80,6 +123,42 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.range-form {
+  width: 100px;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50%;
+  }
+  &::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+  }
+}
 .Dropdown {
   height: 40px;
   width: 45%;
@@ -102,8 +181,9 @@ body {
   margin-top: -2%;
 }
 .todayAmount {
-  font-weight: bolder;
   margin-top: -5%;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .todayBalance {
   color: grey;
@@ -118,6 +198,7 @@ body {
 .boldText {
   font-weight: "bolder";
   margin-top: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .fas.fa-caret-down {
   color: white;
@@ -298,7 +379,8 @@ body {
 }
 .incomeYear {
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
+  margin-top: 4px;
   color: black;
 }
 .retirementIncomeHeading {
@@ -313,9 +395,9 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
-
 .amount {
   margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .myGoalContainer {
   width: 30%;
@@ -344,17 +426,18 @@ body {
 .myGoal {
   font-size: 12px;
   color: grey;
-  margin: 0;
+  margin-top: 5px;
+  /* margin: 0; */
 }
 .chartContainer {
   height: 40%;
   width: 100%;
-  /* background-color: yellow; */
 }
 .goalDescription {
-  font-size: 12px;
+  font-size: 11px;
   color: grey;
   margin: 0;
+  margin-top: 8px;
 }
 .comparisonContainer {
   height: 25%;
@@ -364,22 +447,32 @@ body {
   width: 100%;
   height: 80%;
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
 }
 .averageProgressContainer {
   height: 100%;
   width: 30%;
-  background-color: #eaeaec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .topProgressContainer {
   height: 100%;
   width: 30%;
-  background-color: chocolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .meProgressContainer {
   height: 100%;
   width: 30%;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .infoLabel {
   font-size: 12px;
@@ -392,29 +485,31 @@ body {
   flex-direction: row;
   margin: 0;
   height: 35px;
-  justify-content: center;
   align-items: center;
   border-bottom: 1px solid lightgrey;
   width: 100%;
 }
 .circularProgressContainer {
-  width: 65%;
+  width: 50%;
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   display: flex;
   flex-direction: row;
 }
 .ageSelector {
   font-size: 12px;
+  font-family: "Merriweather", serif;
+  margin-left: 5px;
 }
 .personalInfoContainer {
-  width: 35%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .contributionsContainer {
   display: flex;
   flex-direction: row;
@@ -447,7 +542,7 @@ body {
   align-items: center;
 }
 .contributionText {
-  font-size: 12px;
+  font-size: 10px;
   color: grey;
 }
 .employeeColorDisplay {
@@ -483,8 +578,266 @@ body {
   color: black;
   margin: 0;
 }
+.circular-progress {
+  position: relative;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.progress-value {
+  position: relative;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+}
+.text {
+  font-size: 30px;
+  font-weight: 500;
+  color: #606060;
+}
+.progress-text {
+  font-size: 11px;
+  color: black;
+}
+.slidersContainer {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.spaceContainer {
+  height: 8%;
+  width: 100%;
+}
+.retirementStrategy {
+  height: 70%;
+  width: 75%;
+  padding-top: 15px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+.contributionSlider {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.ageSlider {
+  height: 15%;
+  width: 90%;
+  border-bottom: 0.1px solid lightgrey;
+}
+.helpLinkText {
+  font-size: 10px;
+  color: #0001a2;
+  margin-right: 10px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+.btnContainer {
+  width: 100%;
+  margin-right: 15px;
+}
+.updateBtn {
+  height: 37px;
+  width: 90%;
+  background-color: #4435fd;
+  border: none;
+  color: white;
+  font-weight: lighter;
+  border-radius: 10px;
+}
+.housingAdvanceContainer {
+  height: 18%;
+  width: 80%;
+  margin-top: 15px;
+  border-left: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.helpLink {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.housingContentContainer {
+  max-width: 55%;
+  max-height: fit-content;
+  padding-left: 10px;
+}
+.interestRate {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.employerContribution {
+  width: 90%;
+  height: 6%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.strategyHeading {
+  margin: 0;
+  font-size: 12px;
+}
+.option {
+  font-size: 12px;
+}
+.stackedBarContainer {
+  height: 120px;
+  width: 300px;
+  background-color: green;
+}
+.genderDropdown {
+  display: flex;
+  flex-direction: row;
+  font-family: "Merriweather,serif";
+  font-size: 12px;
+}
+.stickyBtn{
+  display: none;
+}
 /* MEDIA QUERY FOR MOBILES */
 @media (max-width: 480px) {
+  .btnContainer {
+    display: none;
+  }
+  .updateBtn {
+    display: none;
+  }
+  .stonesContainer{
+    display: none;
+  }
+  .stickyBtn{
+    height: 50px;
+    width: 100%;
+    background-color: #0001a2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .ageSlider {
+    border-bottom: 0px;
+  }
+  .strategyHeading {
+    font-size: 14px;
+  }
+  .interestRate {
+    margin-top: 10px;
+  }
+  .retirementStrategy {
+    height: 200px;
+    width: 100%;
+    padding-top: 25px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  .slidersContainer {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lastSubContainer {
+    width: 100%;
+    height: 350px;
+  }
+  .retirementStrategyContainer {
+    /* height: 400px; */
+    width: 100%;
+    display: flex;
+    background-color: #fafafa;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .spaceContainer {
+    display: none;
+  }
+  .stackedBarContainer {
+    height: 200px;
+    width: "100%";
+  }
+  .housingAdvanceContainer {
+    display: none;
+  }
+  .helpLink {
+    display: none;
+  }
+  .genderDropdown {
+    display: flex;
+    flex-direction: row;
+    font-family: "Merriweather,serif";
+    font-size: 12px;
+  }
+  .circularProgressContainer {
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    margin-top: -50px;
+  }
+  .progressContainer {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .personalInfoContainer {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .comparisonHeading {
+    font-size: 13px;
+  }
+  .comparisonContainer {
+    height: 350px;
+    width: 100%;
+  }
+  .goalDescription {
+    font-size: 10px;
+    color: grey;
+    margin: 0;
+    margin-top: 5px;
+  }
   .contributionsContainer {
     display: flex;
     width: 100%;
@@ -594,6 +947,7 @@ body {
     background-color: white;
     display: flex;
     flex-direction: row;
+    z-index: 1;
   }
 
   .navIcon {
@@ -615,10 +969,6 @@ body {
     height: auto;
     background-color: white;
   }
-  .lastSubContainer {
-    width: 100%;
-    height: auto;
-  }
 
   .profileContainer {
     justify-content: end;
@@ -628,6 +978,7 @@ body {
   }
   .boldText {
     margin-top: 0;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .greetContainer {
     height: 80%;
@@ -651,6 +1002,7 @@ body {
   }
   .todayAmount {
     font-size: 28px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .logoContainer {
     display: none;
@@ -698,6 +1050,15 @@ body {
     flex-direction: column;
     margin-top: 10px;
   }
+  .dropdownLabel {
+    font-size: 12px;
+    color: black;
+  }
+  .dropdownRow {
+    display: flex;
+    flex-direction: row;
+    font-family: "Merriweather", serif;
+  }
   .Dropdown {
     width: 90%;
     margin-top: 10px;
@@ -740,6 +1101,10 @@ body {
   .totalInterestDisplay {
     height: 7px;
     width: 10px;
+  }
+  .withdrawal {
+    font-size: 10px;
+    margin-top: -5px;
   }
 }
 
@@ -794,6 +1159,7 @@ body {
   }
   .boldText {
     margin-top: 0;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .greetContainer {
     height: 80%;
@@ -805,6 +1171,7 @@ body {
   }
   .todayAmount {
     font-size: 28px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .logoContainer {
     display: none;
@@ -906,7 +1273,89 @@ body {
 
 /* MEDIA QUERY FOR TABLET  */
 @media (min-width: 768px) and (max-width: 991px) {
-  
+  .circularProgressContainer {
+    width: 80%;
+  }
+
+  .averageProgressContainer {
+    width: 25%;
+  }
+
+  .circular-progress {
+    height: 40px;
+    width: 40px;
+    max-height: 50px;
+    max-width: 50px;
+  }
+
+  .circular-progress::before {
+    height: 32px;
+    width: 32px;
+    max-height: 40px;
+    max-width: 40px;
+  }
+
+  .progress-value {
+    font-size: 12px;
+  }
+
+  .progress-text {
+    font-size: 9px;
+  }
+  .personalInfoContainer {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .selectorContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 35px;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+  }
+
+  .infoLabel {
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+  }
+  .dropdown {
+    font-size: 8px;
+  }
+  .progressContainer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .goalDescription {
+    font-size: 8px;
+    color: grey;
+    margin: 0;
+    margin-top: 4px;
+  }
+  .retirementIncomeHeading {
+    margin: 0;
+    font-size: 10px;
+    color: blue;
+  }
+  .incomeYear {
+    font-size: 10px;
+  }
+  .comparisonHeading {
+    font-size: 10px;
+  }
+  .contributionsOvertime {
+    font-size: 12px;
+  }
   .employerColorDisplay {
     height: 5px;
     width: 7px;
@@ -938,9 +1387,11 @@ body {
   }
   .amount {
     font-size: 12px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .myGoal {
-    font-size: 8px;
+    font-size: 6px;
+    margin-top: 3px;
   }
   .contributionsContainer {
     display: flex;
@@ -999,15 +1450,16 @@ body {
     border-radius: 25px;
   }
   .Name {
-    font-size: 18px;
+    font-size: 14px;
     position: absolute;
   }
   .greet {
-    margin-top: 40px;
-    font-size: 12px;
+    margin-top: 30px;
+    font-size: 10px;
   }
   .todayAmount {
     margin-top: -15%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .todayContributions {
     margin-top: -15px;
@@ -1015,8 +1467,8 @@ body {
     color: grey;
   }
   .todayBalance {
-    margin-top: -15px;
-    font-size: 10px;
+    margin-top: -12px;
+    font-size: 8px;
     color: grey;
   }
   .Dropdown {
@@ -1025,6 +1477,7 @@ body {
   .todayAmount {
     font-size: 16px;
     margin-top: -5px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .day {
     font-size: 10px;
@@ -1043,7 +1496,7 @@ body {
   }
   .withdrawal {
     font-size: 8px;
-    margin-top: -11px;
+    margin-top: -5px;
   }
   .Dropdown {
     height: 30px;
@@ -1054,9 +1507,10 @@ body {
   }
   .boldText {
     font-size: 12px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .incomeYear {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -1082,8 +1536,44 @@ body {
 /* MEDIA QUERY FOR LARGE TABLETS/LAPTOPS   */
 
 @media (min-width: 991px) and (max-width: 1024px) {
+  .infoLabel {
+    font-size: 9px;
+    color: black;
+    font-weight: bold;
+  }
+  .circularProgressContainer {
+    width: 50%;
+  }
+  .averageProgressContainer {
+    width: 25%;
+  }
+
+  .circular-progress {
+    height: 50px;
+    width: 50px;
+    max-height: 60px;
+    max-width: 60px;
+  }
+
+  .circular-progress::before {
+    height: 40px;
+    width: 40px;
+    max-height: 50px;
+    max-width: 50px;
+  }
+
+  .progress-value {
+    font-size: 12px;
+  }
+
+  .progress-text {
+    font-size: 12px;
+  }
   .withdrawalContainer {
     width: 100%;
+  }
+  .comparisonHeading {
+    font-size: 8px;
   }
   .profileIntroContainer {
     height: 20%;
@@ -1126,6 +1616,7 @@ body {
   }
   .todayAmount {
     margin-top: -15%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .todayContributions {
     margin-top: -15px;
@@ -1143,9 +1634,10 @@ body {
   .todayAmount {
     font-size: 16px;
     margin-top: -5px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .day {
-    font-size: 10px;
+    font-size: 8px;
     margin-top: -10px;
   }
   .contributions {
@@ -1161,7 +1653,7 @@ body {
   }
   .withdrawal {
     font-size: 8px;
-    margin-top: -11px;
+    margin-top: -5px;
   }
   .Dropdown {
     height: 30px;
@@ -1172,6 +1664,7 @@ body {
   }
   .boldText {
     font-size: 12px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .myGoalContainer {
     justify-content: center;
@@ -1187,21 +1680,59 @@ body {
   }
   .amount {
     font-size: 16px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .myGoal {
-    font-size: 12px;
+    font-size: 10px;
+    margin-top: 3px;
   }
 
- .totalInterestContainer{
+  .totalInterestContainer {
     width: 40%;
- }
- .ContributionAmount {
-  font-size: 10px;
+  }
+  .ContributionAmount {
+    font-size: 10px;
+    color: black;
+    margin: 0;
+  }
+  .contributionText {
+    font-size: 10px;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  border: none;
   color: black;
-  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-.contributionText{
-  font-size: 10px;
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  height: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
- 
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
 }

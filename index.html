@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script
       src="https://kit.fontawesome.com/d6cbcfea6a.js"
       crossorigin="anonymous"
@@ -159,28 +164,28 @@
             </div>
           </div>
           <div class="chartContainer">
-            <h4>Contributions Overtime</h4>
+            <h4 class="contributionsOvertime">Contributions Overtime</h4>
             <div class="contributionsContainer">
               <div class="employerAmountContainer">
                 <div class="employerColorDisplay"></div>
                 <p class="contributionText">Employer:</p>
-                <h6 class = "ContributionAmount">K73,500</h6>
+                <h6 class="ContributionAmount">K73,500</h6>
               </div>
               <div class="employeeAmountContainer">
                 <div class="employeeColorDisplay"></div>
                 <p class="contributionText">Employee:</p>
-                <h6 class = "ContributionAmount">K52,500</h6>
+                <h6 class="ContributionAmount">K52,500</h6>
               </div>
               <div class="totalInterestContainer">
                 <div class="totalInterestDisplay"></div>
                 <p class="contributionText">Total Interest:</p>
-                <h6 class = "ContributionAmount">K244,313</h6>
+                <h6 class="ContributionAmount">K244,313</h6>
               </div>
             </div>
-            <!-- <canvas id="custom-stacked-chart"></canvas> -->
+            <canvas id="stackedBarChart" width="300" height="150"></canvas>
           </div>
           <div class="comparisonContainer">
-            <h4 style="margin: 0">How do I compare to my peers?</h4>
+            <h4 class="comparisonHeading">How do I compare to my peers?</h4>
             <p class="goalDescription">
               These number represent current goal achievement
             </p>
@@ -188,37 +193,126 @@
               <div class="personalInfoContainer">
                 <div class="selectorContainer">
                   <label class="infoLabel">Age:</label>
-                  <select name="Select Value" id="hello" class="ageSelector">
-                    <option value="Under 30">Under 30</option>
-                    <option value="">Under 40</option>
-                  </select>
+                  <div class="dropdown">
+                    <button class="genderDropdown">
+                      Under 30
+                      <i class="fas fa-caret-down" style="color: black"></i>
+                    </button>
+
+                    <div class="dropdown-content">
+                      <a href="#">Under 30</a>
+                    </div>
+                  </div>
                 </div>
                 <div class="selectorContainer">
                   <label class="infoLabel">Salary:</label>
-                  <select name="Select Value" id="hello" class="ageSelector">
-                    <option value="Under 30">K20 - K30</option>
-                    <option value="">K30-K40</option>
-                  </select>
+                  <div class="dropdown">
+                    <button class="genderDropdown">
+                      K20-K30<i
+                        class="fas fa-caret-down"
+                        style="color: black"
+                      ></i>
+                    </button>
+
+                    <div class="dropdown-content">
+                      <a href="#">K20 - K30</a>
+                    </div>
+                  </div>
                 </div>
                 <div class="selectorContainer">
                   <label class="infoLabel">Gender:</label>
-                  <select name="Select Value" id="hello" class="ageSelector">
-                    <option value="K20- K30">Male</option>
-                    <option value="">Under 40</option>
-                  </select>
+                  <div class="dropdown">
+                    <button class="genderDropdown">
+                      Male<i class="fas fa-caret-down" style="color: black"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Male</a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="circularProgressContainer">
-                <div class="averageProgressContainer"></div>
-                <div class="topProgressContainer"></div>
-                <div class="meProgressContainer"></div>
+                <div class="averageProgressContainer">
+                  <div class="circular-progress" id="average-Progress">
+                    <span class="progress-value" id="average-value">0%</span>
+                  </div>
+                  <p class="progress-text">Average</p>
+                </div>
+                <div class="topProgressContainer">
+                  <div class="circular-progress" id="top-progress">
+                    <span class="progress-value" id="top-value">0%</span>
+                  </div>
+                  <p class="progress-text">Top</p>
+                </div>
+                <div class="meProgressContainer">
+                  <div class="circular-progress" id="mine-progress">
+                    <span class="progress-value" id="mine-value">0%</span>
+                  </div>
+                  <p class="progress-text">Me:</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="lastSubContainer"></div>
+<!-- LAST SUBCONTAINER -->
+      <div class="lastSubContainer">
+        <div class="spaceContainer"></div>
+        <div class="retirementStrategyContainer">
+          <div class="slidersContainer">
+            <div class="retirementStrategy">
+              <h4 class="strategyHeading">Retirement Strategy</h4>
+              <div class="contributionSlider">
+                <h6>Employee Contribution</h6>
+              </div>
+              <div class="ageSlider">
+                <h6>Retirement Age</h6>
+              </div>
+              <div class="employerContribution">
+                <h6>Employee Contribution</h6>
+                <h6>8.4%</h6>
+              </div>
+              <div class="interestRate">
+                <h6>Interest Rate</h6>
+                <h6>5%</h6>
+              </div>
+              <div class="btnContainer">
+                <button class="updateBtn">Update</button>
+              </div>
+              <div class="helpLink">
+                <p class="helpLinkText">View Help Docs</p>
+                <p class="helpLinkText">
+                  <i class="fa-solid fa-angle-right"></i>
+                </p>
+              </div>
+            </div>
+            <div class="housingAdvanceContainer">
+              <div class="housingContentContainer">
+                <p style="font-size: 10px">
+                  Are u considering a <strong> Housing Advance?</strong> 
+                  <p style="font-size: 8px;">Limited
+                    time reduced interest</p>
+                </p>
+                <div style="display: flex; flex-direction: row;margin:0;margin-top:-15px">
+                  <p class="helpLinkText">Learn more</p>
+                  <p class="helpLinkText">
+                    <i class="fa-solid fa-angle-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stonesContainer">
+          <div class="secondStone"></div>
+          <div class="firstStone">
+          </div>
+        </div>
+ 
+<div class="stickyBtn">
+ <h5>Update</h5>
+</div>
+      </div>
     </div>
   </body>
 </html>
