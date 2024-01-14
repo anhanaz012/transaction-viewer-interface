@@ -131,7 +131,6 @@
           </div>
         </div>
       </div>
-
       <!-- MIDDLE CONTAINER OF LAYOUT -->
       <div class="middleSubContainer">
         <div class="retirmentContentContainer">
@@ -182,7 +181,12 @@
                 <h6 class="ContributionAmount">K244,313</h6>
               </div>
             </div>
-            <canvas id="stackedBarChart" width="300" height="150"></canvas>
+            <div class="desktopChartContainer">
+            <canvas id="stackedBarChart"></canvas>
+          </div>
+          <div class="mobileChartContainer">
+            <canvas id="mobileStackedChart"></canvas>
+          </div>
           </div>
           <div class="comparisonContainer">
             <h4 class="comparisonHeading">How do I compare to my peers?</h4>
@@ -263,17 +267,33 @@
             <div class="retirementStrategy">
               <h4 class="strategyHeading">Retirement Strategy</h4>
               <div class="contributionSlider">
-                <h6>Employee Contribution</h6>
+                <h6 class="contributionsHeadings">Employee Contribution</h6>
+                <div class="sliderRangeContainer">
+                  <div class="ageSlideContainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                  </div>
+                  <div class="outputContainer">
+                    <p id="output" style="font-size: 10px;margin: 0;"></p>
+                  </div>
+                </div>
               </div>
               <div class="ageSlider">
-                <h6>Retirement Age</h6>
+                <h6 class="contributionsHeadings">Retirement Age</h6>
+                <div class="sliderRangeContainer">
+                  <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="ageRange">
+                  </div>
+                  <div class="outputContainer">
+                    <p id="ageOutput" style="font-size: 10px;margin: 0;"></p>
+                  </div>
+                </div>
               </div>
               <div class="employerContribution">
-                <h6>Employee Contribution</h6>
+                <h6 class="contributionsHeadings">Employee Contribution</h6>
                 <h6>8.4%</h6>
               </div>
               <div class="interestRate">
-                <h6>Interest Rate</h6>
+                <h6 class="contributionsHeadings">Interest Rate</h6>
                 <h6>5%</h6>
               </div>
               <div class="btnContainer">
@@ -288,7 +308,7 @@
             </div>
             <div class="housingAdvanceContainer">
               <div class="housingContentContainer">
-                <p style="font-size: 10px">
+                <p class="housingText">
                   Are u considering a <strong> Housing Advance?</strong> 
                   <p style="font-size: 8px;">Limited
                     time reduced interest</p>

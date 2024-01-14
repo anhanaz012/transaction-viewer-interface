@@ -123,42 +123,55 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.range-form {
-  width: 100px;
+.slidecontainer {
+  width: 80%;
 }
-
-.range-slider {
+.ageSlideContainer {
+  width: 70%;
+}
+.slider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    lightskyblue 0%,
+    lightskyblue 50%,
+    #d3d3d3 50%,
+    #d3d3d3 100%
+  );
   outline: none;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
+  border-radius: 5px;
   transition: opacity 0.2s;
-  &:hover {
-    opacity: 1;
-  }
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    background: white;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 50%;
-  }
-  &::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    cursor: pointer;
-  }
 }
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+.sliderRangeContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: -20px;
+}
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: white;
+  cursor: pointer;
+}
+
 .Dropdown {
   height: 40px;
   width: 45%;
@@ -423,15 +436,21 @@ body {
   height: 100%;
   border-bottom: 1px solid blue;
 }
+.chart {
+  height: 50px;
+  width: 100%;
+}
 .myGoal {
   font-size: 12px;
   color: grey;
   margin-top: 5px;
-  /* margin: 0; */
 }
 .chartContainer {
   height: 40%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .goalDescription {
   font-size: 11px;
@@ -439,9 +458,17 @@ body {
   margin: 0;
   margin-top: 8px;
 }
+.mobileChartContainer {
+  display: none;
+}
+.desktopChartContainer {
+  height: 75%;
+  width: 100%;
+}
 .comparisonContainer {
   height: 25%;
   width: 100%;
+  margin-top: 15px;
 }
 .progressContainer {
   width: 100%;
@@ -513,7 +540,7 @@ body {
 .contributionsContainer {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   margin: 0px;
   margin-top: -15px;
   justify-content: space-between;
@@ -632,15 +659,20 @@ body {
   padding-left: 20px;
   padding-bottom: 10px;
 }
-.contributionSlider {
-  height: 15%;
+.outputContainer {
+  background-color: white;
+  height: 20px;
+  width: 25px;
+  justify-content: center;
+  align-items: center;
+  font-family: Merriweather, serif;
   display: flex;
-  flex-direction: column;
-  width: 90%;
 }
-
 .ageSlider {
-  height: 15%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 90%;
   border-bottom: 0.1px solid lightgrey;
 }
@@ -717,21 +749,39 @@ body {
   font-family: "Merriweather,serif";
   font-size: 12px;
 }
-.stickyBtn{
+.stickyBtn {
   display: none;
 }
 /* MEDIA QUERY FOR MOBILES */
 @media (max-width: 480px) {
+  .contributionsOvertime {
+    font-size: 16px;
+    margin-top: 56px;
+  }
+  .mobileChartContainer {
+    height: 100%;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .comparisonContainer {
+    margin-top: 50px;
+  }
+  .desktopChartContainer {
+    display: none;
+  }
   .btnContainer {
     display: none;
   }
   .updateBtn {
     display: none;
   }
-  .stonesContainer{
+  .stonesContainer {
     display: none;
   }
-  .stickyBtn{
+  .stickyBtn {
     height: 50px;
     width: 100%;
     background-color: #0001a2;
@@ -1270,9 +1320,130 @@ body {
     display: none;
   }
 }
-
+.housingText {
+  font-size: 10px;
+}
 /* MEDIA QUERY FOR TABLET  */
 @media (min-width: 768px) and (max-width: 991px) {
+  .contributionSlider{
+    width: 100px;
+    justify-content: flex-start;
+  }
+  .ageSlider{
+    justify-content: flex-start;
+    width: 100px;
+      }
+  .outputContainer{
+    height: 15px;
+    width: 15px;
+  }
+  .contributionsHeadings {
+    font-size: 20px;
+  }
+.sliderRangeContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -10px;
+  flex-direction: row;
+}
+.slider{
+  margin-top: 20px;
+  position: relative;
+}
+  .mobileChartContainer {
+    height: 50%;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .desktopChartContainer {
+    display: none;
+  }
+  .housingText {
+    font-size: 8px;
+  }
+  .housingAdvanceContainer {
+    height: 20%;
+    width: 80%;
+    margin-top: 15px;
+    border-left: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .housingContentContainer {
+    max-width: 55%;
+    max-height: fit-content;
+    padding-left: 10px;
+  }
+
+  .retirementStrategyContainer {
+    height: 55%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .helpLinkText {
+    font-size: 8px;
+  }
+
+  .updateBtn {
+    height: 25px;
+    width: 90%;
+    background-color: #4435fd;
+    border: none;
+    color: white;
+    font-weight: lighter;
+    font-size: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  .btnContainer {
+    width: 100%;
+    margin-right: 15px;
+  }
+  .employerContribution {
+    width: 90%;
+    height: 8%;
+    display: flex;
+    font-size: 11px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .interestRate {
+    width: 90%;
+    height: 8%;
+    display: flex;
+    font-size: 11px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contributionSlider {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .contributionsHeadings {
+    font-size: 6px;
+    margin-top: -20px;
+    padding: 0;
+    margin: 0;
+  }
+  .strategyHeading {
+    font-size: 10px;
+  }
+  .genderDropdown {
+    font-size: 8px;
+  }
   .circularProgressContainer {
     width: 80%;
   }
@@ -1536,6 +1707,83 @@ body {
 /* MEDIA QUERY FOR LARGE TABLETS/LAPTOPS   */
 
 @media (min-width: 991px) and (max-width: 1024px) {
+  .housingText {
+    font-size: 8px;
+  }
+  .housingAdvanceContainer {
+    height: 20%;
+    width: 80%;
+    margin-top: 15px;
+    border-left: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .housingContentContainer {
+    max-width: 55%;
+    max-height: fit-content;
+    padding-left: 10px;
+  }
+
+  .retirementStrategyContainer {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .helpLinkText {
+    font-size: 8px;
+  }
+
+  .updateBtn {
+    height: 25px;
+    width: 90%;
+    background-color: #4435fd;
+    border: none;
+    color: white;
+    font-weight: lighter;
+    font-size: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  .btnContainer {
+    width: 100%;
+    margin-right: 15px;
+  }
+  .employerContribution {
+    width: 90%;
+    height: 8%;
+    display: flex;
+    font-size: 11px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .interestRate {
+    width: 90%;
+    height: 8%;
+    display: flex;
+    font-size: 11px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contributionSlider {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  .contributionsHeadings {
+    font-size: 8px;
+    margin: 0px;
+  }
+  .strategyHeading {
+    font-size: 10px;
+  }
   .infoLabel {
     font-size: 9px;
     color: black;
